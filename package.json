@@ -1,6 +1,6 @@
 {
   "name": "mac-usage-stats",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Get the usage of your Mac since you bought it.",
   "main": "index.js",
   "bin": {

@@ -26,12 +26,25 @@ module.exports = async function main() {
   let totalUptimeHours = await exec(
     "smartctl -a disk0 -s on| grep Power_On_Hours | awk '{print $10}'"
   );
+  if (
+    totalUptimeHours["stderr"] &&
+    totalUptimeHours["stderr"].indexOf("smartctl: command not found") !== -1
+  ) {
+    console.log(
+      `This has one dependency, smartctl must be installed on your Mac. It gets hard drive info and is a handy tool to have =)`
+    );
+    return;
+  }
   totalUptimeHours = Number(totalUptimeHours["stdout"]);
 
   let initializeYear = await exec(
     "ls -la /private/var/db/.AppleSetupDone | awk '{print $8}'"
   );
-  initializeYear = Number(initializeYear["stdout"]);
+
+  initializeYear =
+    initializeYear["stdout"].indexOf(":") === -1
+      ? Number(initializeYear["stdout"])
+      : new Date().getFullYear();
 
   let initializeMonth = await exec(
     "ls -la /private/var/db/.AppleSetupDone | awk '{print $7}'"
