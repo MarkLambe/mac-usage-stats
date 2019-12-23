@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/snippets/MarkLambeDev/n7zy98/to-get-the-average-daily-usage-of-my-mac"
+    "url": "https://github.com/MarkLambe/mac-usage-stats"
   },
   "author": "Mark Lambe Mark@MarkLambe.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lamware/mac-usage-stats/issues"
+    "url": "https://github.com/MarkLambe/mac-usage-stats/issues"
   },
-  "homepage": "https://github.com/Lamware/mac-usage-stats#readme"
+  "homepage": "https://github.com/MarkLambe/mac-usage-stats#readme"
 }
